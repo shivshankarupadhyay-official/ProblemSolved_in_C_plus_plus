@@ -1,22 +1,27 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 int main(){
+    vector<int>vec;
+
     int n;
-    cout<<"ENTER THE SIZE: ";
+    cout<<"ENTER THE SIZE OF VECTOR: ";
     cin>>n;
 
-    int arr[n];
-
-    for(int i = 0; i<n; i++){
-        cin>>arr[i];
-
+    cout<<"ENTER "<<n<<" ELEMENTS: ";
+    for(int i = 0;i<n; i++){
+        int x;
+        cin>>x;
+        vec.push_back(x);
     }
-    int min = arr[0];
+    int minimum = vec[0];
 
-    for( int i = 0; i<n; i++){
-        if(arr[i]<min){
-            min = arr[i];
+    for(int x:vec){
+        
+        if(x < minimum){
+            minimum = x;
         }
     }
-    cout<<"THE MINIMUM IN THE ELEMENT IS: "<<min<<endl;
+    cout<<" MINIMUM ELEMENT : "<< minimum<<endl;
+    return 0;
 }
